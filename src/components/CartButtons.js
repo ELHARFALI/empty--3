@@ -7,7 +7,20 @@ import { useCartContext } from '../context/cart_context'
 import { useUserContext } from '../context/user_context'
 
 const CartButtons = () => {
-  return <h4>cart buttons </h4>
+  return <Wrapper className='cart-btn-wrapper'>
+    <Link to='/cart' className='cart-btn'>
+      Cart
+      <span className='cart-container'>
+        <FaShoppingCart />
+        <span className="cart-value">
+          12
+        </span>
+      </span>
+    </Link>
+    <button type="button" className='auth-btn'>
+      Login <FaUserPlus />
+    </button>
+  </Wrapper>
 }
 
 const Wrapper = styled.div`
@@ -55,6 +68,7 @@ const Wrapper = styled.div`
     background: transparent;
     border-color: transparent;
     font-size: 1.5rem;
+    margin-left: 30px;
     cursor: pointer;
     color: var(--clr-grey-1);
     letter-spacing: var(--spacing);
@@ -62,5 +76,5 @@ const Wrapper = styled.div`
       margin-left: 5px;
     }
   }
-`
+`;
 export default CartButtons
